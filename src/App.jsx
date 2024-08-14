@@ -1,10 +1,7 @@
 import { useEffect, useState, useRef } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 import MainScene from "./MainScene";
 import { Scale, Scene } from "phaser";
-import UI from "./UI";
 import { Box } from "@mui/material";
 
 function App() {
@@ -15,7 +12,7 @@ function App() {
     const config = {
       type: Phaser.AUTO,
       width: 800,
-      height: 800,
+      height: 900,
       scene: MainScene,
       parent: "gameScene",
       backgroundColor: "#8ED173",
@@ -50,20 +47,8 @@ function App() {
   }, []);
 
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        height: "200vh",
-        width: "100vw",
-        overflow: "hidden"
-      }}
-    >
-      <div id="gameScene" style={{ position: "absolute", top: 0, left: "30%" }}></div>
-      <div style={{}}>
-      <UI/>
-      </div>
+    <div>
+      <div id="gameScene" ></div>
     </div>
   );
 }
