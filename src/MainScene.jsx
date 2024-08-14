@@ -87,14 +87,13 @@ class MainScene extends Phaser.Scene {
       this.scores[item] = scoreText;
     });
 
-    this.confirmColor = false
-
     for (let i=0; i<14; i++) {
         this.scores[this.scoreItems[i]].on('pointerdown', () => {
           if (!this.isConfirmed[i]) {
             this.isConfirmed[i] = !this.isConfirmed[i]
             this.scores[this.scoreItems[i]].setBackgroundColor("#599468")
             this.isHolded = [false, false, false, false, false]
+            this.outlineList.forEach(outline => outline.setVisible(false));
             this.leftReroll = 3
             this.rollDice()
             this.leftText.setText(`남은 횟수: ${this.leftReroll}`)
