@@ -229,9 +229,9 @@ sameDice() {
         const sameDiceNumber = this.diceValue.filter((dice) => dice === i).length;
         if (!this.isConfirmed[9]) {
         if (sameDiceNumber === 3) {
-            const leftTwo = this.diceValue.filter((dice) => dice != this.diceValue[i])
+            const leftTwo = this.diceValue.filter((dice) => dice != i)
             if (leftTwo[0] === leftTwo[1]) {
-                for (let j = 0; j<6; j++) {
+                for (let j = 0; j<5; j++) {
                     sum += this.diceValue[j]
                 }
                 this.scores[this.scoreItems[9]].setText(sum)
